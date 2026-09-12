@@ -39,7 +39,7 @@
    #Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.nix = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
        tree
 	fastfetch
@@ -51,6 +51,10 @@
 	fsType = "btrfs";
 	options = ["nofail"];
 };  
+
+virtualisation.docker = {
+  enable = true;
+};
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
