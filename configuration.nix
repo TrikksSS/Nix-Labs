@@ -46,7 +46,11 @@
      ];
    };
 
-  
+  fileSystems."/home/nix/media" = {
+	device = "/dev/disk/by-uuid/44c4bda9-45be-4265-b3f8-170c002519b0";
+	fsType = "btrfs";
+	options = ["nofail"];
+};  
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
