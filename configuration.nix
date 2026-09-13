@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./pi-hole.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -93,33 +94,6 @@ virtualisation.docker = {
   # Or disable the firewall altogether.
    networking.firewall.enable = false;
   
-  services.pihole-ftl = {
-  enable = true;
-  settings = {
-    # See <https://docs.pi-hole.net/ftldns/configfile/>
-
-    # External DNS Servers quad9 and cloudflare
-    dns.upstreams = [ "9.9.9.9" "1.1.1.1" ];
-
-    # Optionally resolve local hosts (domain is optional)
-    dns.hosts = [ "192.168.1.188 hostname.domain" ];
-  };
-
-  lists = [    # Lists can be added via URL
-    {
-      url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt";
-      type = "block";
-      enabled = true;
-      description = "hagezi blocklist";
-    }
-  ];
-};
-
-services.pihole-web = {
-  enable = true;
-  ports = [ "443s" ];
-};
-
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
