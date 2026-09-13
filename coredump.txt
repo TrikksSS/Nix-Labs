@@ -1,0 +1,512 @@
+Sep 12 22:55:41 nixos jellyfin[26373]:    at Emby.Server.Implementations.AppBase.BaseApplicationPaths.CreateAndCheckMarker(String path, String markerName, Boolean recursive) in /build/source/Emby.Server.Implementations/AppBase/BaseApplicationPaths.cs:line 100
+Sep 12 22:55:41 nixos jellyfin[26373]:    at Emby.Server.Implementations.AppBase.BaseApplicationPaths.MakeSanityCheckOrThrow() in /build/source/Emby.Server.Implementations/AppBase/BaseApplicationPaths.cs:line 89
+Sep 12 22:55:41 nixos jellyfin[26373]:    at Emby.Server.Implementations.ServerApplicationPaths.MakeSanityCheckOrThrow() in /build/source/Emby.Server.Implementations/ServerApplicationPaths.cs:line 103
+Sep 12 22:55:41 nixos jellyfin[26373]:    at Jellyfin.Server.Program.StartApp(StartupOptions options) in /build/source/Jellyfin.Server/Program.cs:line 89
+Sep 12 22:55:41 nixos jellyfin[26373]:    at Jellyfin.Server.Program.<Main>(String[] args)
+Sep 12 22:55:41 nixos systemd-coredump[26386]: Process 26373 (jellyfin) of user 993 dumped core.
+                                               
+                                               Module liburcu-common.so.8 without build-id.
+                                               Module libatomic.so.1 without build-id.
+                                               Module liburcu-cds.so.8 without build-id.
+                                               Module liburcu-bp.so.8 without build-id.
+                                               Module libnuma.so.1 without build-id.
+                                               Module liblttng-ust-tracepoint.so.0 without build-id.
+                                               Module liblttng-ust.so.0 without build-id.
+                                               Module libicudata.so.76 without build-id.
+                                               Module libkeyutils.so.1 without build-id.
+                                               Module libkrb5support.so.0 without build-id.
+                                               Module libcom_err.so.3 without build-id.
+                                               Module libk5crypto.so.3 without build-id.
+                                               Module libkrb5.so.3 without build-id.
+                                               Module libgcc_s.so.1 without build-id.
+                                               Module libstdc++.so.6 without build-id.
+                                               Module libicuuc.so without build-id.
+                                               Module libicui18n.so without build-id.
+                                               Module libgssapi_krb5.so without build-id.
+                                               Stack trace of thread 26373:
+                                               #0  0x00007502db09fe0c __pthread_kill_implementation (libc.so.6 + 0x9fe0c)
+                                               #1  0x00007502db04255e raise (libc.so.6 + 0x4255e)
+                                               #2  0x00007502db029350 abort (libc.so.6 + 0x29350)
+                                               #3  0x00007502d8533f99 PROCAbort (libcoreclr.so + 0x533f99)
+                                               #4  0x00007502d8533e9c TerminateProcess (libcoreclr.so + 0x533e9c)
+                                               #5  0x00007502d82b000b SfiNext (libcoreclr.so + 0x2b000b)
+                                               #6  0x00007502592d22a6 n/a (n/a + 0x0)
+                                               #7  0x00007502592d1a6c n/a (n/a + 0x0)
+                                               #8  0x00007502d837518c CallDescrWorkerInternal (libcoreclr.so + 0x37518c)
+                                               #9  0x00007502d81ab1d5 _Z18DispatchCallSimplePmjmj (libcoreclr.so + 0x1ab1d5)
+                                               #10 0x00007502d82ab58a _Z24DispatchManagedExceptionP6ObjectP8_CONTEXT (libcoreclr.so + 0x2ab58a)
+                                               #11 0x00007502d82abac6 _Z24DispatchManagedExceptionP6Object (libcoreclr.so + 0x2abac6)
+                                               #12 0x00007502d820c270 _Z8ThrowNewP6Object (libcoreclr.so + 0x20c270)
+                                               #13 0x00007502d820c3bd _Z8IL_ThrowP6Object (libcoreclr.so + 0x20c3bd)
+                                               #14 0x0000750259f1ece9 n/a (n/a + 0x0)
+                                               #15 0x00007502592f9e22 n/a (n/a + 0x0)
+                                               #16 0x00007502592f9d41 n/a (n/a + 0x0)
+                                               #17 0x0000750259ef1897 n/a (n/a + 0x0)
+                                               #18 0x00007502d837518c CallDescrWorkerInternal (libcoreclr.so + 0x37518c)
+                                               #19 0x00007502d81ab7cd _ZN18MethodDescCallSite16CallTargetWorkerEPKmPmi (libcoreclr.so + 0x1ab7cd)
+                                               #20 0x00007502d808c4d4 _Z7RunMainP10MethodDescsPiPP8PtrArray (libcoreclr.so + 0x8c4d4)
+                                               #21 0x00007502d808c966 _ZN8Assembly17ExecuteMainMethodEPP8PtrArrayi (libcoreclr.so + 0x8c966)
+                                               #22 0x00007502d80b6d47 _ZN8CorHost215ExecuteAssemblyEjPKDsiPS1_Pj (libcoreclr.so + 0xb6d47)
+                                               #23 0x00007502d8079842 coreclr_execute_assembly (libcoreclr.so + 0x79842)
+                                               #24 0x00007502dba92944 _Z19run_app_for_contextRK20hostpolicy_context_tiPPKc (libhostpolicy.so + 0x1f944)
+                                               #25 0x00007502dba92c80 _Z7run_appiPPKc (libhostpolicy.so + 0x1fc80)
+                                               #26 0x00007502dba93cb6 corehost_main (libhostpolicy.so + 0x20cb6)
+                                               #27 0x00007502dbad0952 _ZN10fx_muxer_t24handle_exec_host_commandERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERK19host_startup_info_tS7_RKSt13unordered_mapI13known_optionsSt6vectorIS5_SaIS5_EE18known_options_hashSt8equal_toISC_ESaISt4pairIKSC_SF_EEEiPPKci11host_mode_tbPciPi (libhostfxr.so + 0x11952)
+                                               #28 0x00007502dbacf9fa _ZN10fx_muxer_t7executeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiPPKcRK19host_startup_info_tPciPi (libhostfxr.so + 0x109fa)
+                                               #29 0x00007502dbac9bf7 hostfxr_main_startupinfo (libhostfxr.so + 0xabf7)
+                                               #30 0x000057365106b2e6 n/a (jellyfin + 0x82e6)
+                                               #31 0x000057365106b60f n/a (jellyfin + 0x860f)
+                                               #32 0x00007502db02b285 __libc_start_call_main (libc.so.6 + 0x2b285)
+                                               #33 0x00007502db02b338 __libc_start_main@@GLIBC_2.34 (libc.so.6 + 0x2b338)
+                                               #34 0x000057365106a3f9 n/a (jellyfin + 0x73f9)
+                                               
+                                               Stack trace of thread 26377:
+                                               #0  0x00007502db12348d syscall (libc.so.6 + 0x12348d)
+                                               #1  0x00007502db6be1ee ust_listener_thread (liblttng-ust.so.0 + 0x211ee)
+                                               #2  0x00007502db09dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #3  0x00007502db125684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26382:
+                                               #0  0x00007502db0a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007502db09a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007502db09a7cc __futex_abstimed_wait_common (libc.so.6 + 0x9a7cc)
+                                               #3  0x00007502db09d22e pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x9d22e)
+                                               #4  0x00007502d852c202 _ZN7CorUnix26CPalSynchronizationManager16ThreadNativeWaitEPNS_21_ThreadNativeWaitDataEjPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52c202)
+                                               #5  0x00007502d852bdfa _ZN7CorUnix26CPalSynchronizationManager11BlockThreadEPNS_10CPalThreadEjbbPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52bdfa)
+                                               #6  0x00007502d8530b04 _ZN7CorUnix32InternalWaitForMultipleObjectsExEPNS_10CPalThreadEjPKPvijii (libcoreclr.so + 0x530b04)
+                                               #7  0x00007502d8530e13 WaitForMultipleObjectsEx (libcoreclr.so + 0x530e13)
+                                               #8  0x00007502d84235e4 _ZN16DebuggerRCThread8MainLoopEv (libcoreclr.so + 0x4235e4)
+                                               #9  0x00007502d842342f _ZN16DebuggerRCThread10ThreadProcEv (libcoreclr.so + 0x42342f)
+                                               #10 0x00007502d8423105 _ZN16DebuggerRCThread16ThreadProcStaticEPv (libcoreclr.so + 0x423105)
+                                               #11 0x00007502d8537da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #12 0x00007502db09dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #13 0x00007502db125684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26378:
+                                               #0  0x00007502db12348d syscall (libc.so.6 + 0x12348d)
+                                               #1  0x00007502db6be1ee ust_listener_thread (liblttng-ust.so.0 + 0x211ee)
+                                               #2  0x00007502db09dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #3  0x00007502db125684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26379:
+                                               #0  0x00007502db0a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007502db09a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007502db09a0c4 __syscall_cancel (libc.so.6 + 0x9a0c4)
+                                               #3  0x00007502db117a0e __poll (libc.so.6 + 0x117a0e)
+                                               #4  0x00007502d852e26e _ZN7CorUnix26CPalSynchronizationManager12WorkerThreadEPv (libcoreclr.so + 0x52e26e)
+                                               #5  0x00007502d8537da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #6  0x00007502db09dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #7  0x00007502db125684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26380:
+                                               #0  0x00007502db0a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007502db09a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007502db09a0c4 __syscall_cancel (libc.so.6 + 0x9a0c4)
+                                               #3  0x00007502db117a0e __poll (libc.so.6 + 0x117a0e)
+                                               #4  0x00007502d842b7f8 _Z11ds_ipc_pollP25_DiagnosticsIpcPollHandlemjPFvPKcjE (libcoreclr.so + 0x42b7f8)
+                                               #5  0x00007502d83a1fd9 _Z47ds_ipc_stream_factory_get_next_available_streamPFvPKcjE (libcoreclr.so + 0x3a1fd9)
+                                               #6  0x00007502d83a6cf2 _ZL13server_threadPv (libcoreclr.so + 0x3a6cf2)
+                                               #7  0x00007502d8537da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #8  0x00007502db09dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #9  0x00007502db125684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26384:
+                                               #0  0x00007502db0a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007502db09a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007502db09a7cc __futex_abstimed_wait_common (libc.so.6 + 0x9a7cc)
+                                               #3  0x00007502db09d440 pthread_cond_timedwait@@GLIBC_2.3.2 (libc.so.6 + 0x9d440)
+                                               #4  0x00007502d852c1a5 _ZN7CorUnix26CPalSynchronizationManager16ThreadNativeWaitEPNS_21_ThreadNativeWaitDataEjPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52c1a5)
+                                               #5  0x00007502d852bdfa _ZN7CorUnix26CPalSynchronizationManager11BlockThreadEPNS_10CPalThreadEjbbPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52bdfa)
+                                               #6  0x00007502d85312f9 SleepEx (libcoreclr.so + 0x5312f9)
+                                               #7  0x00007502d817bbda _ZN24TieredCompilationManager21BackgroundWorkerStartEv (libcoreclr.so + 0x17bbda)
+                                               #8  0x00007502d817ba98 _ZN24TieredCompilationManager29BackgroundWorkerBootstrapper1EPv (libcoreclr.so + 0x17ba98)
+                                               #9  0x00007502d81781db _ZL31ManagedThreadBase_DispatchOuterP22ManagedThreadCallState (libcoreclr.so + 0x1781db)
+                                               #10 0x00007502d817869d _ZN17ManagedThreadBase7KickOffEPFvPvES0_ (libcoreclr.so + 0x17869d)
+                                               #11 0x00007502d817b9c0 _ZN24TieredCompilationManager29BackgroundWorkerBootstrapper0EPv (libcoreclr.so + 0x17b9c0)
+                                               #12 0x00007502d8537da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #13 0x00007502db09dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #14 0x00007502db125684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26383:
+                                               #0  0x00007502db0a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007502db09a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007502db09a7cc __futex_abstimed_wait_common (libc.so.6 + 0x9a7cc)
+                                               #3  0x00007502db09d440 pthread_cond_timedwait@@GLIBC_2.3.2 (libc.so.6 + 0x9d440)
+                                               #4  0x00007502d852c1a5 _ZN7CorUnix26CPalSynchronizationManager16ThreadNativeWaitEPNS_21_ThreadNativeWaitDataEjPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52c1a5)
+                                               #5  0x00007502d852bdfa _ZN7CorUnix26CPalSynchronizationManager11BlockThreadEPNS_10CPalThreadEjbbPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52bdfa)
+                                               #6  0x00007502d8530b04 _ZN7CorUnix32InternalWaitForMultipleObjectsExEPNS_10CPalThreadEjPKPvijii (libcoreclr.so + 0x530b04)
+                                               #7  0x00007502d8530d19 WaitForSingleObjectEx (libcoreclr.so + 0x530d19)
+                                               #8  0x00007502d827c73b _ZN12CLREventBase6WaitExEj8WaitModeP11PendingSync (libcoreclr.so + 0x27c73b)
+                                               #9  0x00007502d81e8b7f _ZN15FinalizerThread21WaitForFinalizerEventEP8CLREvent (libcoreclr.so + 0x1e8b7f)
+                                               #10 0x00007502d81e8d8f _ZN15FinalizerThread21FinalizerThreadWorkerEPv (libcoreclr.so + 0x1e8d8f)
+                                               #11 0x00007502d81781db _ZL31ManagedThreadBase_DispatchOuterP22ManagedThreadCallState (libcoreclr.so + 0x1781db)
+                                               #12 0x00007502d81786ed _ZN17ManagedThreadBase13FinalizerBaseEPFvPvE (libcoreclr.so + 0x1786ed)
+                                               #13 0x00007502d81e8fc8 _ZN15FinalizerThread20FinalizerThreadStartEPv (libcoreclr.so + 0x1e8fc8)
+                                               #14 0x00007502d8537da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #15 0x00007502db09dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #16 0x00007502db125684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26381:
+                                               #0  0x00007502db0a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007502db09a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007502db09a0c4 __syscall_cancel (libc.so.6 + 0x9a0c4)
+                                               #3  0x00007502db1177b7 __open (libc.so.6 + 0x1177b7)
+                                               #4  0x00007502d842b1cd _ZN10TwoWayPipe17WaitForConnectionEv (libcoreclr.so + 0x42b1cd)
+                                               #5  0x00007502d8425ef7 _ZN19DbgTransportSession15TransportWorkerEv (libcoreclr.so + 0x425ef7)
+                                               #6  0x00007502d8424eb5 _ZN19DbgTransportSession21TransportWorkerStaticEPv (libcoreclr.so + 0x424eb5)
+                                               #7  0x00007502d8537da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #8  0x00007502db09dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #9  0x00007502db125684 __clone (libc.so.6 + 0x125684)
+                                               ELF object binary architecture: AMD x86-64
+Sep 12 22:55:41 nixos systemd[1]: jellyfin.service: Main process exited, code=dumped, status=6/ABRT
+Sep 12 22:55:41 nixos systemd[1]: jellyfin.service: Failed with result 'core-dump'.
+Sep 12 22:55:41 nixos systemd[1]: jellyfin.service: Scheduled restart job, restart counter is at 3.
+Sep 12 22:55:41 nixos systemd[1]: Started Jellyfin Media Server.
+Sep 12 22:55:42 nixos jellyfin[26395]: Unhandled exception. System.UnauthorizedAccessException: Access to the path '/var/lib/jellyfin/plugins/.jellyfin-plugin' is denied.
+Sep 12 22:55:42 nixos jellyfin[26395]:  ---> System.IO.IOException: Permission denied
+Sep 12 22:55:42 nixos jellyfin[26395]:    --- End of inner exception stack trace ---
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String path, OpenFlags flags, Int32 mode, Boolean failForSymlink, Boolean& wasSymlink, Func`4 createOpenException)
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64& fileLength, UnixFileMode& filePermissions, Boolean failForSymlink, Boolean& wasSymlink, Func`4 createOpenException)
+Sep 12 22:55:42 nixos jellyfin[26395]:    at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Jellyfin.Extensions.FileHelper.CreateEmpty(String path) in /build/source/src/Jellyfin.Extensions/FileHelper.cs:line 16
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Emby.Server.Implementations.AppBase.BaseApplicationPaths.CheckOrCreateMarker(String path, String markerName, Boolean recursive) in /build/source/Emby.Server.Implementations/AppBase/BaseApplicationPaths.cs:line 129
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Emby.Server.Implementations.AppBase.BaseApplicationPaths.CreateAndCheckMarker(String path, String markerName, Boolean recursive) in /build/source/Emby.Server.Implementations/AppBase/BaseApplicationPaths.cs:line 100
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Emby.Server.Implementations.AppBase.BaseApplicationPaths.MakeSanityCheckOrThrow() in /build/source/Emby.Server.Implementations/AppBase/BaseApplicationPaths.cs:line 89
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Emby.Server.Implementations.ServerApplicationPaths.MakeSanityCheckOrThrow() in /build/source/Emby.Server.Implementations/ServerApplicationPaths.cs:line 103
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Jellyfin.Server.Program.StartApp(StartupOptions options) in /build/source/Jellyfin.Server/Program.cs:line 89
+Sep 12 22:55:42 nixos jellyfin[26395]:    at Jellyfin.Server.Program.<Main>(String[] args)
+Sep 12 22:55:42 nixos systemd-coredump[26408]: Process 26395 (jellyfin) of user 993 dumped core.
+                                               
+                                               Module liburcu-common.so.8 without build-id.
+                                               Module libatomic.so.1 without build-id.
+                                               Module liburcu-cds.so.8 without build-id.
+                                               Module liburcu-bp.so.8 without build-id.
+                                               Module libnuma.so.1 without build-id.
+                                               Module liblttng-ust-tracepoint.so.0 without build-id.
+                                               Module liblttng-ust.so.0 without build-id.
+                                               Module libicudata.so.76 without build-id.
+                                               Module libkeyutils.so.1 without build-id.
+                                               Module libkrb5support.so.0 without build-id.
+                                               Module libcom_err.so.3 without build-id.
+                                               Module libk5crypto.so.3 without build-id.
+                                               Module libkrb5.so.3 without build-id.
+                                               Module libgcc_s.so.1 without build-id.
+                                               Module libstdc++.so.6 without build-id.
+                                               Module libicuuc.so without build-id.
+                                               Module libicui18n.so without build-id.
+                                               Module libgssapi_krb5.so without build-id.
+                                               Stack trace of thread 26395:
+                                               #0  0x000074d1ac29fe0c __pthread_kill_implementation (libc.so.6 + 0x9fe0c)
+                                               #1  0x000074d1ac24255e raise (libc.so.6 + 0x4255e)
+                                               #2  0x000074d1ac229350 abort (libc.so.6 + 0x29350)
+                                               #3  0x000074d1a9733f99 PROCAbort (libcoreclr.so + 0x533f99)
+                                               #4  0x000074d1a9733e9c TerminateProcess (libcoreclr.so + 0x533e9c)
+                                               #5  0x000074d1a94b000b SfiNext (libcoreclr.so + 0x2b000b)
+                                               #6  0x000074d12a4d22a6 n/a (n/a + 0x0)
+                                               #7  0x000074d12a4d1a6c n/a (n/a + 0x0)
+                                               #8  0x000074d1a957518c CallDescrWorkerInternal (libcoreclr.so + 0x37518c)
+                                               #9  0x000074d1a93ab1d5 _Z18DispatchCallSimplePmjmj (libcoreclr.so + 0x1ab1d5)
+                                               #10 0x000074d1a94ab58a _Z24DispatchManagedExceptionP6ObjectP8_CONTEXT (libcoreclr.so + 0x2ab58a)
+                                               #11 0x000074d1a94abac6 _Z24DispatchManagedExceptionP6Object (libcoreclr.so + 0x2abac6)
+                                               #12 0x000074d1a940c270 _Z8ThrowNewP6Object (libcoreclr.so + 0x20c270)
+                                               #13 0x000074d1a940c3bd _Z8IL_ThrowP6Object (libcoreclr.so + 0x20c3bd)
+                                               #14 0x000074d12b11ece9 n/a (n/a + 0x0)
+                                               #15 0x000074d12a4f9e22 n/a (n/a + 0x0)
+                                               #16 0x000074d12a4f9d41 n/a (n/a + 0x0)
+                                               #17 0x000074d12b0f1897 n/a (n/a + 0x0)
+                                               #18 0x000074d1a957518c CallDescrWorkerInternal (libcoreclr.so + 0x37518c)
+                                               #19 0x000074d1a93ab7cd _ZN18MethodDescCallSite16CallTargetWorkerEPKmPmi (libcoreclr.so + 0x1ab7cd)
+                                               #20 0x000074d1a928c4d4 _Z7RunMainP10MethodDescsPiPP8PtrArray (libcoreclr.so + 0x8c4d4)
+                                               #21 0x000074d1a928c966 _ZN8Assembly17ExecuteMainMethodEPP8PtrArrayi (libcoreclr.so + 0x8c966)
+                                               #22 0x000074d1a92b6d47 _ZN8CorHost215ExecuteAssemblyEjPKDsiPS1_Pj (libcoreclr.so + 0xb6d47)
+                                               #23 0x000074d1a9279842 coreclr_execute_assembly (libcoreclr.so + 0x79842)
+                                               #24 0x000074d1acc63944 _Z19run_app_for_contextRK20hostpolicy_context_tiPPKc (libhostpolicy.so + 0x1f944)
+                                               #25 0x000074d1acc63c80 _Z7run_appiPPKc (libhostpolicy.so + 0x1fc80)
+                                               #26 0x000074d1acc64cb6 corehost_main (libhostpolicy.so + 0x20cb6)
+                                               #27 0x000074d1acca1952 _ZN10fx_muxer_t24handle_exec_host_commandERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERK19host_startup_info_tS7_RKSt13unordered_mapI13known_optionsSt6vectorIS5_SaIS5_EE18known_options_hashSt8equal_toISC_ESaISt4pairIKSC_SF_EEEiPPKci11host_mode_tbPciPi (libhostfxr.so + 0x11952)
+                                               #28 0x000074d1acca09fa _ZN10fx_muxer_t7executeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiPPKcRK19host_startup_info_tPciPi (libhostfxr.so + 0x109fa)
+                                               #29 0x000074d1acc9abf7 hostfxr_main_startupinfo (libhostfxr.so + 0xabf7)
+                                               #30 0x00005c597a8072e6 n/a (jellyfin + 0x82e6)
+                                               #31 0x00005c597a80760f n/a (jellyfin + 0x860f)
+                                               #32 0x000074d1ac22b285 __libc_start_call_main (libc.so.6 + 0x2b285)
+                                               #33 0x000074d1ac22b338 __libc_start_main@@GLIBC_2.34 (libc.so.6 + 0x2b338)
+                                               #34 0x00005c597a8063f9 n/a (jellyfin + 0x73f9)
+                                               
+                                               Stack trace of thread 26399:
+                                               #0  0x000074d1ac32348d syscall (libc.so.6 + 0x12348d)
+                                               #1  0x000074d1ac8be1ee ust_listener_thread (liblttng-ust.so.0 + 0x211ee)
+                                               #2  0x000074d1ac29dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #3  0x000074d1ac325684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26400:
+                                               #0  0x000074d1ac32348d syscall (libc.so.6 + 0x12348d)
+                                               #1  0x000074d1ac8be1ee ust_listener_thread (liblttng-ust.so.0 + 0x211ee)
+                                               #2  0x000074d1ac29dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #3  0x000074d1ac325684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26404:
+                                               #0  0x000074d1ac2a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x000074d1ac29a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x000074d1ac29a7cc __futex_abstimed_wait_common (libc.so.6 + 0x9a7cc)
+                                               #3  0x000074d1ac29d22e pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x9d22e)
+                                               #4  0x000074d1a972c202 _ZN7CorUnix26CPalSynchronizationManager16ThreadNativeWaitEPNS_21_ThreadNativeWaitDataEjPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52c202)
+                                               #5  0x000074d1a972bdfa _ZN7CorUnix26CPalSynchronizationManager11BlockThreadEPNS_10CPalThreadEjbbPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52bdfa)
+                                               #6  0x000074d1a9730b04 _ZN7CorUnix32InternalWaitForMultipleObjectsExEPNS_10CPalThreadEjPKPvijii (libcoreclr.so + 0x530b04)
+                                               #7  0x000074d1a9730e13 WaitForMultipleObjectsEx (libcoreclr.so + 0x530e13)
+                                               #8  0x000074d1a96235e4 _ZN16DebuggerRCThread8MainLoopEv (libcoreclr.so + 0x4235e4)
+                                               #9  0x000074d1a962342f _ZN16DebuggerRCThread10ThreadProcEv (libcoreclr.so + 0x42342f)
+                                               #10 0x000074d1a9623105 _ZN16DebuggerRCThread16ThreadProcStaticEPv (libcoreclr.so + 0x423105)
+                                               #11 0x000074d1a9737da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #12 0x000074d1ac29dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #13 0x000074d1ac325684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26401:
+                                               #0  0x000074d1ac2a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x000074d1ac29a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x000074d1ac29a0c4 __syscall_cancel (libc.so.6 + 0x9a0c4)
+                                               #3  0x000074d1ac317a0e __poll (libc.so.6 + 0x117a0e)
+                                               #4  0x000074d1a972e26e _ZN7CorUnix26CPalSynchronizationManager12WorkerThreadEPv (libcoreclr.so + 0x52e26e)
+                                               #5  0x000074d1a9737da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #6  0x000074d1ac29dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #7  0x000074d1ac325684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26402:
+                                               #0  0x000074d1ac2a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x000074d1ac29a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x000074d1ac29a0c4 __syscall_cancel (libc.so.6 + 0x9a0c4)
+                                               #3  0x000074d1ac317a0e __poll (libc.so.6 + 0x117a0e)
+                                               #4  0x000074d1a962b7f8 _Z11ds_ipc_pollP25_DiagnosticsIpcPollHandlemjPFvPKcjE (libcoreclr.so + 0x42b7f8)
+                                               #5  0x000074d1a95a1fd9 _Z47ds_ipc_stream_factory_get_next_available_streamPFvPKcjE (libcoreclr.so + 0x3a1fd9)
+                                               #6  0x000074d1a95a6cf2 _ZL13server_threadPv (libcoreclr.so + 0x3a6cf2)
+                                               #7  0x000074d1a9737da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #8  0x000074d1ac29dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #9  0x000074d1ac325684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26405:
+                                               #0  0x000074d1ac2a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x000074d1ac29a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x000074d1ac29a7cc __futex_abstimed_wait_common (libc.so.6 + 0x9a7cc)
+                                               #3  0x000074d1ac29d440 pthread_cond_timedwait@@GLIBC_2.3.2 (libc.so.6 + 0x9d440)
+                                               #4  0x000074d1a972c1a5 _ZN7CorUnix26CPalSynchronizationManager16ThreadNativeWaitEPNS_21_ThreadNativeWaitDataEjPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52c1a5)
+                                               #5  0x000074d1a972bdfa _ZN7CorUnix26CPalSynchronizationManager11BlockThreadEPNS_10CPalThreadEjbbPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52bdfa)
+                                               #6  0x000074d1a9730b04 _ZN7CorUnix32InternalWaitForMultipleObjectsExEPNS_10CPalThreadEjPKPvijii (libcoreclr.so + 0x530b04)
+                                               #7  0x000074d1a9730d19 WaitForSingleObjectEx (libcoreclr.so + 0x530d19)
+                                               #8  0x000074d1a947c73b _ZN12CLREventBase6WaitExEj8WaitModeP11PendingSync (libcoreclr.so + 0x27c73b)
+                                               #9  0x000074d1a93e8b7f _ZN15FinalizerThread21WaitForFinalizerEventEP8CLREvent (libcoreclr.so + 0x1e8b7f)
+                                               #10 0x000074d1a93e8d8f _ZN15FinalizerThread21FinalizerThreadWorkerEPv (libcoreclr.so + 0x1e8d8f)
+                                               #11 0x000074d1a93781db _ZL31ManagedThreadBase_DispatchOuterP22ManagedThreadCallState (libcoreclr.so + 0x1781db)
+                                               #12 0x000074d1a93786ed _ZN17ManagedThreadBase13FinalizerBaseEPFvPvE (libcoreclr.so + 0x1786ed)
+                                               #13 0x000074d1a93e8fc8 _ZN15FinalizerThread20FinalizerThreadStartEPv (libcoreclr.so + 0x1e8fc8)
+                                               #14 0x000074d1a9737da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #15 0x000074d1ac29dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #16 0x000074d1ac325684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26403:
+                                               #0  0x000074d1ac2a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x000074d1ac29a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x000074d1ac29a0c4 __syscall_cancel (libc.so.6 + 0x9a0c4)
+                                               #3  0x000074d1ac3177b7 __open (libc.so.6 + 0x1177b7)
+                                               #4  0x000074d1a962b1cd _ZN10TwoWayPipe17WaitForConnectionEv (libcoreclr.so + 0x42b1cd)
+                                               #5  0x000074d1a9625ef7 _ZN19DbgTransportSession15TransportWorkerEv (libcoreclr.so + 0x425ef7)
+                                               #6  0x000074d1a9624eb5 _ZN19DbgTransportSession21TransportWorkerStaticEPv (libcoreclr.so + 0x424eb5)
+                                               #7  0x000074d1a9737da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #8  0x000074d1ac29dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #9  0x000074d1ac325684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26406:
+                                               #0  0x000074d1ac2a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x000074d1ac29a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x000074d1ac29a7cc __futex_abstimed_wait_common (libc.so.6 + 0x9a7cc)
+                                               #3  0x000074d1ac29d440 pthread_cond_timedwait@@GLIBC_2.3.2 (libc.so.6 + 0x9d440)
+                                               #4  0x000074d1a972c1a5 _ZN7CorUnix26CPalSynchronizationManager16ThreadNativeWaitEPNS_21_ThreadNativeWaitDataEjPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52c1a5)
+                                               #5  0x000074d1a972bdfa _ZN7CorUnix26CPalSynchronizationManager11BlockThreadEPNS_10CPalThreadEjbbPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52bdfa)
+                                               #6  0x000074d1a97312f9 SleepEx (libcoreclr.so + 0x5312f9)
+                                               #7  0x000074d1a937bbda _ZN24TieredCompilationManager21BackgroundWorkerStartEv (libcoreclr.so + 0x17bbda)
+                                               #8  0x000074d1a937ba98 _ZN24TieredCompilationManager29BackgroundWorkerBootstrapper1EPv (libcoreclr.so + 0x17ba98)
+                                               #9  0x000074d1a93781db _ZL31ManagedThreadBase_DispatchOuterP22ManagedThreadCallState (libcoreclr.so + 0x1781db)
+                                               #10 0x000074d1a937869d _ZN17ManagedThreadBase7KickOffEPFvPvES0_ (libcoreclr.so + 0x17869d)
+                                               #11 0x000074d1a937b9c0 _ZN24TieredCompilationManager29BackgroundWorkerBootstrapper0EPv (libcoreclr.so + 0x17b9c0)
+                                               #12 0x000074d1a9737da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #13 0x000074d1ac29dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #14 0x000074d1ac325684 __clone (libc.so.6 + 0x125684)
+                                               ELF object binary architecture: AMD x86-64
+Sep 12 22:55:42 nixos systemd[1]: jellyfin.service: Main process exited, code=dumped, status=6/ABRT
+Sep 12 22:55:42 nixos systemd[1]: jellyfin.service: Failed with result 'core-dump'.
+Sep 12 22:55:42 nixos systemd[1]: jellyfin.service: Scheduled restart job, restart counter is at 4.
+Sep 12 22:55:42 nixos systemd[1]: Started Jellyfin Media Server.
+Sep 12 22:55:42 nixos jellyfin[26417]: Unhandled exception. System.UnauthorizedAccessException: Access to the path '/var/lib/jellyfin/plugins/.jellyfin-plugin' is denied.
+Sep 12 22:55:42 nixos jellyfin[26417]:  ---> System.IO.IOException: Permission denied
+Sep 12 22:55:42 nixos jellyfin[26417]:    --- End of inner exception stack trace ---
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String path, OpenFlags flags, Int32 mode, Boolean failForSymlink, Boolean& wasSymlink, Func`4 createOpenException)
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64& fileLength, UnixFileMode& filePermissions, Boolean failForSymlink, Boolean& wasSymlink, Func`4 createOpenException)
+Sep 12 22:55:42 nixos jellyfin[26417]:    at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Jellyfin.Extensions.FileHelper.CreateEmpty(String path) in /build/source/src/Jellyfin.Extensions/FileHelper.cs:line 16
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Emby.Server.Implementations.AppBase.BaseApplicationPaths.CheckOrCreateMarker(String path, String markerName, Boolean recursive) in /build/source/Emby.Server.Implementations/AppBase/BaseApplicationPaths.cs:line 129
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Emby.Server.Implementations.AppBase.BaseApplicationPaths.CreateAndCheckMarker(String path, String markerName, Boolean recursive) in /build/source/Emby.Server.Implementations/AppBase/BaseApplicationPaths.cs:line 100
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Emby.Server.Implementations.AppBase.BaseApplicationPaths.MakeSanityCheckOrThrow() in /build/source/Emby.Server.Implementations/AppBase/BaseApplicationPaths.cs:line 89
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Emby.Server.Implementations.ServerApplicationPaths.MakeSanityCheckOrThrow() in /build/source/Emby.Server.Implementations/ServerApplicationPaths.cs:line 103
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Jellyfin.Server.Program.StartApp(StartupOptions options) in /build/source/Jellyfin.Server/Program.cs:line 89
+Sep 12 22:55:42 nixos jellyfin[26417]:    at Jellyfin.Server.Program.<Main>(String[] args)
+Sep 12 22:55:43 nixos systemd-coredump[26432]: Process 26417 (jellyfin) of user 993 dumped core.
+                                               
+                                               Module liburcu-common.so.8 without build-id.
+                                               Module libatomic.so.1 without build-id.
+                                               Module liburcu-cds.so.8 without build-id.
+                                               Module liburcu-bp.so.8 without build-id.
+                                               Module libnuma.so.1 without build-id.
+                                               Module liblttng-ust-tracepoint.so.0 without build-id.
+                                               Module liblttng-ust.so.0 without build-id.
+                                               Module libicudata.so.76 without build-id.
+                                               Module libkeyutils.so.1 without build-id.
+                                               Module libkrb5support.so.0 without build-id.
+                                               Module libcom_err.so.3 without build-id.
+                                               Module libk5crypto.so.3 without build-id.
+                                               Module libkrb5.so.3 without build-id.
+                                               Module libgcc_s.so.1 without build-id.
+                                               Module libstdc++.so.6 without build-id.
+                                               Module libicuuc.so without build-id.
+                                               Module libicui18n.so without build-id.
+                                               Module libgssapi_krb5.so without build-id.
+                                               Stack trace of thread 26417:
+                                               #0  0x00007558ee49fe0c __pthread_kill_implementation (libc.so.6 + 0x9fe0c)
+                                               #1  0x00007558ee44255e raise (libc.so.6 + 0x4255e)
+                                               #2  0x00007558ee429350 abort (libc.so.6 + 0x29350)
+                                               #3  0x00007558eb933f99 PROCAbort (libcoreclr.so + 0x533f99)
+                                               #4  0x00007558eb933e9c TerminateProcess (libcoreclr.so + 0x533e9c)
+                                               #5  0x00007558eb6b000b SfiNext (libcoreclr.so + 0x2b000b)
+                                               #6  0x000075586c6b22a6 n/a (n/a + 0x0)
+                                               #7  0x000075586c6b1a6c n/a (n/a + 0x0)
+                                               #8  0x00007558eb77518c CallDescrWorkerInternal (libcoreclr.so + 0x37518c)
+                                               #9  0x00007558eb5ab1d5 _Z18DispatchCallSimplePmjmj (libcoreclr.so + 0x1ab1d5)
+                                               #10 0x00007558eb6ab58a _Z24DispatchManagedExceptionP6ObjectP8_CONTEXT (libcoreclr.so + 0x2ab58a)
+                                               #11 0x00007558eb6abac6 _Z24DispatchManagedExceptionP6Object (libcoreclr.so + 0x2abac6)
+                                               #12 0x00007558eb60c270 _Z8ThrowNewP6Object (libcoreclr.so + 0x20c270)
+                                               #13 0x00007558eb60c3bd _Z8IL_ThrowP6Object (libcoreclr.so + 0x20c3bd)
+                                               #14 0x000075586d2fece9 n/a (n/a + 0x0)
+                                               #15 0x000075586c6d9e22 n/a (n/a + 0x0)
+                                               #16 0x000075586c6d9d41 n/a (n/a + 0x0)
+                                               #17 0x000075586d2d1897 n/a (n/a + 0x0)
+                                               #18 0x00007558eb77518c CallDescrWorkerInternal (libcoreclr.so + 0x37518c)
+                                               #19 0x00007558eb5ab7cd _ZN18MethodDescCallSite16CallTargetWorkerEPKmPmi (libcoreclr.so + 0x1ab7cd)
+                                               #20 0x00007558eb48c4d4 _Z7RunMainP10MethodDescsPiPP8PtrArray (libcoreclr.so + 0x8c4d4)
+                                               #21 0x00007558eb48c966 _ZN8Assembly17ExecuteMainMethodEPP8PtrArrayi (libcoreclr.so + 0x8c966)
+                                               #22 0x00007558eb4b6d47 _ZN8CorHost215ExecuteAssemblyEjPKDsiPS1_Pj (libcoreclr.so + 0xb6d47)
+                                               #23 0x00007558eb479842 coreclr_execute_assembly (libcoreclr.so + 0x79842)
+                                               #24 0x00007558eeaf8944 _Z19run_app_for_contextRK20hostpolicy_context_tiPPKc (libhostpolicy.so + 0x1f944)
+                                               #25 0x00007558eeaf8c80 _Z7run_appiPPKc (libhostpolicy.so + 0x1fc80)
+                                               #26 0x00007558eeaf9cb6 corehost_main (libhostpolicy.so + 0x20cb6)
+                                               #27 0x00007558eee69952 _ZN10fx_muxer_t24handle_exec_host_commandERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERK19host_startup_info_tS7_RKSt13unordered_mapI13known_optionsSt6vectorIS5_SaIS5_EE18known_options_hashSt8equal_toISC_ESaISt4pairIKSC_SF_EEEiPPKci11host_mode_tbPciPi (libhostfxr.so + 0x11952)
+                                               #28 0x00007558eee689fa _ZN10fx_muxer_t7executeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiPPKcRK19host_startup_info_tPciPi (libhostfxr.so + 0x109fa)
+                                               #29 0x00007558eee62bf7 hostfxr_main_startupinfo (libhostfxr.so + 0xabf7)
+                                               #30 0x000060441a75b2e6 n/a (jellyfin + 0x82e6)
+                                               #31 0x000060441a75b60f n/a (jellyfin + 0x860f)
+                                               #32 0x00007558ee42b285 __libc_start_call_main (libc.so.6 + 0x2b285)
+                                               #33 0x00007558ee42b338 __libc_start_main@@GLIBC_2.34 (libc.so.6 + 0x2b338)
+                                               #34 0x000060441a75a3f9 n/a (jellyfin + 0x73f9)
+                                               
+                                               Stack trace of thread 26421:
+                                               #0  0x00007558ee52348d syscall (libc.so.6 + 0x12348d)
+                                               #1  0x00007558ee6bb1ee ust_listener_thread (liblttng-ust.so.0 + 0x211ee)
+                                               #2  0x00007558ee49dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #3  0x00007558ee525684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26426:
+                                               #0  0x00007558ee4a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007558ee49a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007558ee49a7cc __futex_abstimed_wait_common (libc.so.6 + 0x9a7cc)
+                                               #3  0x00007558ee49d22e pthread_cond_wait@@GLIBC_2.3.2 (libc.so.6 + 0x9d22e)
+                                               #4  0x00007558eb92c202 _ZN7CorUnix26CPalSynchronizationManager16ThreadNativeWaitEPNS_21_ThreadNativeWaitDataEjPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52c202)
+                                               #5  0x00007558eb92bdfa _ZN7CorUnix26CPalSynchronizationManager11BlockThreadEPNS_10CPalThreadEjbbPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52bdfa)
+                                               #6  0x00007558eb930b04 _ZN7CorUnix32InternalWaitForMultipleObjectsExEPNS_10CPalThreadEjPKPvijii (libcoreclr.so + 0x530b04)
+                                               #7  0x00007558eb930e13 WaitForMultipleObjectsEx (libcoreclr.so + 0x530e13)
+                                               #8  0x00007558eb8235e4 _ZN16DebuggerRCThread8MainLoopEv (libcoreclr.so + 0x4235e4)
+                                               #9  0x00007558eb82342f _ZN16DebuggerRCThread10ThreadProcEv (libcoreclr.so + 0x42342f)
+                                               #10 0x00007558eb823105 _ZN16DebuggerRCThread16ThreadProcStaticEPv (libcoreclr.so + 0x423105)
+                                               #11 0x00007558eb937da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #12 0x00007558ee49dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #13 0x00007558ee525684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26423:
+                                               #0  0x00007558ee4a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007558ee49a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007558ee49a0c4 __syscall_cancel (libc.so.6 + 0x9a0c4)
+                                               #3  0x00007558ee517a0e __poll (libc.so.6 + 0x117a0e)
+                                               #4  0x00007558eb92e26e _ZN7CorUnix26CPalSynchronizationManager12WorkerThreadEPv (libcoreclr.so + 0x52e26e)
+                                               #5  0x00007558eb937da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #6  0x00007558ee49dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #7  0x00007558ee525684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26422:
+                                               #0  0x00007558ee52348d syscall (libc.so.6 + 0x12348d)
+                                               #1  0x00007558ee6bb1ee ust_listener_thread (liblttng-ust.so.0 + 0x211ee)
+                                               #2  0x00007558ee49dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #3  0x00007558ee525684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26424:
+                                               #0  0x00007558ee4a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007558ee49a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007558ee49a0c4 __syscall_cancel (libc.so.6 + 0x9a0c4)
+                                               #3  0x00007558ee517a0e __poll (libc.so.6 + 0x117a0e)
+                                               #4  0x00007558eb82b7f8 _Z11ds_ipc_pollP25_DiagnosticsIpcPollHandlemjPFvPKcjE (libcoreclr.so + 0x42b7f8)
+                                               #5  0x00007558eb7a1fd9 _Z47ds_ipc_stream_factory_get_next_available_streamPFvPKcjE (libcoreclr.so + 0x3a1fd9)
+                                               #6  0x00007558eb7a6cf2 _ZL13server_threadPv (libcoreclr.so + 0x3a6cf2)
+                                               #7  0x00007558eb937da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #8  0x00007558ee49dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #9  0x00007558ee525684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26428:
+                                               #0  0x00007558ee4a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007558ee49a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007558ee49a7cc __futex_abstimed_wait_common (libc.so.6 + 0x9a7cc)
+                                               #3  0x00007558ee49d440 pthread_cond_timedwait@@GLIBC_2.3.2 (libc.so.6 + 0x9d440)
+                                               #4  0x00007558eb92c1a5 _ZN7CorUnix26CPalSynchronizationManager16ThreadNativeWaitEPNS_21_ThreadNativeWaitDataEjPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52c1a5)
+                                               #5  0x00007558eb92bdfa _ZN7CorUnix26CPalSynchronizationManager11BlockThreadEPNS_10CPalThreadEjbbPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52bdfa)
+                                               #6  0x00007558eb9312f9 SleepEx (libcoreclr.so + 0x5312f9)
+                                               #7  0x00007558eb57bbda _ZN24TieredCompilationManager21BackgroundWorkerStartEv (libcoreclr.so + 0x17bbda)
+                                               #8  0x00007558eb57ba98 _ZN24TieredCompilationManager29BackgroundWorkerBootstrapper1EPv (libcoreclr.so + 0x17ba98)
+                                               #9  0x00007558eb5781db _ZL31ManagedThreadBase_DispatchOuterP22ManagedThreadCallState (libcoreclr.so + 0x1781db)
+                                               #10 0x00007558eb57869d _ZN17ManagedThreadBase7KickOffEPFvPvES0_ (libcoreclr.so + 0x17869d)
+                                               #11 0x00007558eb57b9c0 _ZN24TieredCompilationManager29BackgroundWorkerBootstrapper0EPv (libcoreclr.so + 0x17b9c0)
+                                               #12 0x00007558eb937da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #13 0x00007558ee49dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #14 0x00007558ee525684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26425:
+                                               #0  0x00007558ee4a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007558ee49a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007558ee49a0c4 __syscall_cancel (libc.so.6 + 0x9a0c4)
+                                               #3  0x00007558ee5177b7 __open (libc.so.6 + 0x1177b7)
+                                               #4  0x00007558eb82b1cd _ZN10TwoWayPipe17WaitForConnectionEv (libcoreclr.so + 0x42b1cd)
+                                               #5  0x00007558eb825ef7 _ZN19DbgTransportSession15TransportWorkerEv (libcoreclr.so + 0x425ef7)
+                                               #6  0x00007558eb824eb5 _ZN19DbgTransportSession21TransportWorkerStaticEPv (libcoreclr.so + 0x424eb5)
+                                               #7  0x00007558eb937da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #8  0x00007558ee49dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #9  0x00007558ee525684 __clone (libc.so.6 + 0x125684)
+                                               
+                                               Stack trace of thread 26427:
+                                               #0  0x00007558ee4a6962 __syscall_cancel_arch (libc.so.6 + 0xa6962)
+                                               #1  0x00007558ee49a04c __internal_syscall_cancel (libc.so.6 + 0x9a04c)
+                                               #2  0x00007558ee49a7cc __futex_abstimed_wait_common (libc.so.6 + 0x9a7cc)
+                                               #3  0x00007558ee49d440 pthread_cond_timedwait@@GLIBC_2.3.2 (libc.so.6 + 0x9d440)
+                                               #4  0x00007558eb92c1a5 _ZN7CorUnix26CPalSynchronizationManager16ThreadNativeWaitEPNS_21_ThreadNativeWaitDataEjPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52c1a5)
+                                               #5  0x00007558eb92bdfa _ZN7CorUnix26CPalSynchronizationManager11BlockThreadEPNS_10CPalThreadEjbbPNS_18ThreadWakeupReasonEPj (libcoreclr.so + 0x52bdfa)
+                                               #6  0x00007558eb930b04 _ZN7CorUnix32InternalWaitForMultipleObjectsExEPNS_10CPalThreadEjPKPvijii (libcoreclr.so + 0x530b04)
+                                               #7  0x00007558eb930d19 WaitForSingleObjectEx (libcoreclr.so + 0x530d19)
+                                               #8  0x00007558eb67c73b _ZN12CLREventBase6WaitExEj8WaitModeP11PendingSync (libcoreclr.so + 0x27c73b)
+                                               #9  0x00007558eb5e8b7f _ZN15FinalizerThread21WaitForFinalizerEventEP8CLREvent (libcoreclr.so + 0x1e8b7f)
+                                               #10 0x00007558eb5e8d8f _ZN15FinalizerThread21FinalizerThreadWorkerEPv (libcoreclr.so + 0x1e8d8f)
+                                               #11 0x00007558eb5781db _ZL31ManagedThreadBase_DispatchOuterP22ManagedThreadCallState (libcoreclr.so + 0x1781db)
+                                               #12 0x00007558eb5786ed _ZN17ManagedThreadBase13FinalizerBaseEPFvPvE (libcoreclr.so + 0x1786ed)
+                                               #13 0x00007558eb5e8fc8 _ZN15FinalizerThread20FinalizerThreadStartEPv (libcoreclr.so + 0x1e8fc8)
+                                               #14 0x00007558eb937da6 _ZN7CorUnix10CPalThread11ThreadEntryEPv (libcoreclr.so + 0x537da6)
+                                               #15 0x00007558ee49dd93 start_thread (libc.so.6 + 0x9dd93)
+                                               #16 0x00007558ee525684 __clone (libc.so.6 + 0x125684)
+                                               ELF object binary architecture: AMD x86-64
+Sep 12 22:55:43 nixos systemd[1]: jellyfin.service: Main process exited, code=dumped, status=6/ABRT
+Sep 12 22:55:43 nixos systemd[1]: jellyfin.service: Failed with result 'core-dump'.
+Sep 12 22:55:43 nixos systemd[1]: jellyfin.service: Scheduled restart job, restart counter is at 5.
+Sep 12 22:55:43 nixos systemd[1]: jellyfin.service: Start request repeated too quickly.
+Sep 12 22:55:43 nixos systemd[1]: jellyfin.service: Failed with result 'start-limit-hit'.
+Sep 12 22:55:43 nixos systemd[1]: Failed to start Jellyfin Media Server.
