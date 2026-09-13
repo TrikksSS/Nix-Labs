@@ -9,9 +9,12 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./pi-hole.nix
+      ./jellyfin.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -56,14 +59,6 @@
 virtualisation.docker = {
   enable = true;
 };
-
-
-  services.jellyfin = {
-    enable = true;
-    openFirewall = true;
-    user = "nix";
-  };
-
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
