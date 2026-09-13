@@ -56,6 +56,14 @@ virtualisation.docker = {
   enable = true;
 };
 
+
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+    user = "nix";
+  };
+
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
    environment.systemPackages = with pkgs; [
@@ -63,6 +71,7 @@ virtualisation.docker = {
      wget
      git 
      bind
+     iptables
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
