@@ -8,7 +8,7 @@
   imports =
     [ 
       ./hardware-configuration.nix
-     # ./pi-hole.nix
+      ./pi-hole.nix
       ./jellyfin.nix
       ./ollama.nix
     ];
