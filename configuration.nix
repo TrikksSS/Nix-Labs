@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ./pi-hole.nix
       ./jellyfin.nix
-      ./ollama.nix
+      #./ollama.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -55,9 +55,8 @@ virtualisation.docker = {
      wget
      git 
      bind
-     iptables
+     nftables
      borgbackup
-     pkgs.ollama
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
