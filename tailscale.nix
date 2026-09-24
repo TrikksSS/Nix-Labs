@@ -4,6 +4,7 @@
   # 1. Enable the service and the firewall
   services.tailscale.enable = true;
   networking.nftables.enable = true;
+  services.tailscale.useRoutingFeatures = "server";
   networking.firewall = {
     enable = true;
     # Always allow traffic from your Tailscale network
