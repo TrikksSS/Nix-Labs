@@ -4,7 +4,6 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./pi-hole.nix
       ./jellyfin.nix
       ./tailscale.nix
     ];
