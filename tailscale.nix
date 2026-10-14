@@ -22,5 +22,22 @@
   # (Optional but recommended for faster boot with VPNs)
   systemd.network.wait-online.enable = false; 
   boot.initrd.systemd.network.wait-online.enable = false;
+ 
+systemd.services.restart-tailscale = {
+  description = "Restart Tailscale Daemon";
+  serviceConfig = {
+    Type = "oneshot";
+    ExecStart = "${pkgs.systemd}/bin/systemctl restart tailscaled.service";
+  };
+};
+
+systemd.timers.restart-tailscale = {
+  description = "Timer to restart Tailscale every night at midnight";
+  wantedBy = [ "timers.target" ];
+  timerConfig = {
+    OnCalendar = "00:00:00";
+    Persistent = true;
+  };
+};
 }
 
