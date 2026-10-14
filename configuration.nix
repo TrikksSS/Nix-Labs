@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
       ./jellyfin.nix
       ./tailscale.nix
-	./syncthing.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
